@@ -1,0 +1,36 @@
+.LoadingScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeUp 500ms ease-in-out;
+}
+
+.LoadingScreen .Logo {
+    animation: spin 1.5s ease-in-out 500ms infinite;
+}
+
+@keyframes fadeUp {
+    from {
+        transform: translateY(100vh);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0);
+    }
+}

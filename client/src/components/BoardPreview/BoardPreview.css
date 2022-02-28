@@ -1,0 +1,39 @@
+.BoardPreview {
+    position: relative;
+    width: 100%;
+    padding: 40px 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: var(--default-blue-color);
+    transition: all 300ms ease;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.BoardPreview:hover {
+    background-color: #3081f3;
+}
+
+.BoardPreview h3 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.BoardPreview .close-btn {
+    position: absolute;
+    padding: 5px;
+    top: 5px;
+    right: 10px;
+    font-size: 22px;
+    display: none;
+    cursor: pointer;
+    transition: transform 300ms ease;
+}
+
+.BoardPreview .close-btn:hover {
+    transform: scale(1.2);
+}

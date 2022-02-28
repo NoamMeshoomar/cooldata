@@ -1,0 +1,13 @@
+.LoadingSpin img {
+    animation: spin 800ms linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(-360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}

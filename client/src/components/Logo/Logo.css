@@ -1,0 +1,15 @@
+.Logo {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Logo h1 {
+    font-weight: 600;
+    color: var(--default-blue-color);
+}
+
+.Logo h1 span {
+    color: var(--default-grey-color);
+}
