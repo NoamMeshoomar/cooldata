@@ -1,6 +1,6 @@
 # cooldata
 
-* NOT READY YET *
+- NOT READY YET
 
 # Live View
 https://cooldatanm.netlify.app
