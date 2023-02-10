@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const helmet = require("helmet");
 const cors = require("cors");
+const axios = require("axios");
 require("dotenv").config();
 
 const usersRoute = require("./routes/users");
@@ -20,7 +21,13 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => res.send("Hello World"));
+app.get("/", async (req, res) => {
+    const response = await axios.get("https://www.instagram.com/oauth/authorize/?client_id=1299311833980376&redirect_uri=https://cooldata-git-main-noammeshoomar-gmailcom.vercel.app/redirect&scope=user_profile,user_media&response_type=token", () => {
+
+    }, {});
+    console.log(response);
+    res.status(200).send(response);
+});
 
 app.use(`${baseURL}/users`, usersRoute);
 app.use(`${baseURL}/boards`, boardsRoute);
