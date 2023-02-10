@@ -20,6 +20,8 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => res.send("Hello World"));
+
 app.use(`${baseURL}/users`, usersRoute);
 app.use(`${baseURL}/boards`, boardsRoute);
 app.use(`${baseURL}/lists`, listsRoute);
