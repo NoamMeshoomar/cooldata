@@ -21,12 +21,18 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-app.get("/", async (req, res) => {
-    const response = await axios.get("https://www.instagram.com/oauth/authorize/?client_id=1299311833980376&redirect_uri=https://cooldata-git-main-noammeshoomar-gmailcom.vercel.app/redirect&scope=user_profile,user_media&response_type=token", () => {
+const INSTAGRAM_ENDPOINT = "https://www.instagram.com/oauth/authorize/?client_id=1299311833980376&redirect_uri=https://cooldata-git-main-noammeshoomar-gmailcom.vercel.app/redirect&scope=user_profile,user_media&response_type=token";
 
-    }, {});
-    console.log(response);
-    res.status(200).send(response);
+app.get("/", async (req, res) => {
+    try {
+        const response = await axios.get(INSTAGRAM_ENDPOINT, () => {
+    
+        });
+        console.log(response.data);
+        res.status(200).send(response.data);
+    } catch (err) {
+        res.status(400).send(response.response);        
+    }
 });
 
 app.use(`${baseURL}/users`, usersRoute);
